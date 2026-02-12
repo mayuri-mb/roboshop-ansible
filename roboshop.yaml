@@ -63,7 +63,7 @@
       zone: "{{ domain_name }}"
       record: "{{ item }}-{{ env }}.{{ domain_name }}"
       type: A
-      tta: 1
+      ttl: 1
     loop: "{{ instances }}"  
     when: action == "destroy"
 
