@@ -7,7 +7,7 @@
     domain_name: daws-88s.online  
     env: dev
     instances:
-    - mongdb
+    - mongodb
     - catalogue
   tasks:
   - name: create ec2 instance
