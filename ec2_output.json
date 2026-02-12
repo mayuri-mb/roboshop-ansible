@@ -7,7 +7,7 @@
                 "changed": true,
                 "failed": false,
                 "instance_ids": [
-                    "i-07e1f6c37e396c8e2"
+                    "i-09ce2ac885a5dddc2"
                 ],
                 "instances": [
                     {
@@ -17,11 +17,11 @@
                             {
                                 "device_name": "/dev/sda1",
                                 "ebs": {
-                                    "attach_time": "2026-02-12T08:36:03+00:00",
+                                    "attach_time": "2026-02-12T10:51:21+00:00",
                                     "delete_on_termination": true,
                                     "ebs_card_index": 0,
                                     "status": "attaching",
-                                    "volume_id": "vol-01c51dd3d631cf504"
+                                    "volume_id": "vol-0f0990a4f9a08aeef"
                                 }
                             }
                         ],
@@ -29,7 +29,7 @@
                         "capacity_reservation_specification": {
                             "capacity_reservation_preference": "open"
                         },
-                        "client_token": "265aaea3ca0a4b2280a8de8ccfc32204",
+                        "client_token": "fe263f218ed44e00ad8faca5cf8b47e4",
                         "cpu_options": {
                             "core_count": 1,
                             "threads_per_core": 2
@@ -45,9 +45,9 @@
                         },
                         "hypervisor": "xen",
                         "image_id": "ami-0220d79f3f480ecf5",
-                        "instance_id": "i-07e1f6c37e396c8e2",
+                        "instance_id": "i-09ce2ac885a5dddc2",
                         "instance_type": "t3.micro",
-                        "launch_time": "2026-02-12T08:36:02+00:00",
+                        "launch_time": "2026-02-12T10:51:20+00:00",
                         "maintenance_options": {
                             "auto_recovery": "default",
                             "reboot_migration": "default"
@@ -67,12 +67,12 @@
                             {
                                 "association": {
                                     "ip_owner_id": "amazon",
-                                    "public_dns_name": "ec2-100-53-244-19.compute-1.amazonaws.com",
-                                    "public_ip": "100.53.244.19"
+                                    "public_dns_name": "ec2-100-31-202-83.compute-1.amazonaws.com",
+                                    "public_ip": "100.31.202.83"
                                 },
                                 "attachment": {
-                                    "attach_time": "2026-02-12T08:36:02+00:00",
-                                    "attachment_id": "eni-attach-0aac34ac13e1e193d",
+                                    "attach_time": "2026-02-12T10:51:20+00:00",
+                                    "attachment_id": "eni-attach-08d5c8b9905b3d5f0",
                                     "delete_on_termination": true,
                                     "device_index": 0,
                                     "network_card_index": 0,
@@ -87,24 +87,24 @@
                                 ],
                                 "interface_type": "interface",
                                 "ipv6_addresses": [],
-                                "mac_address": "02:03:be:4b:a3:f9",
-                                "network_interface_id": "eni-0c9d8c6567a98cac0",
+                                "mac_address": "02:7b:68:ff:04:45",
+                                "network_interface_id": "eni-0c89225d1ef92cbc7",
                                 "operator": {
                                     "managed": false
                                 },
                                 "owner_id": "911701613683",
-                                "private_dns_name": "ip-172-31-4-130.ec2.internal",
-                                "private_ip_address": "172.31.4.130",
+                                "private_dns_name": "ip-172-31-11-39.ec2.internal",
+                                "private_ip_address": "172.31.11.39",
                                 "private_ip_addresses": [
                                     {
                                         "association": {
                                             "ip_owner_id": "amazon",
-                                            "public_dns_name": "ec2-100-53-244-19.compute-1.amazonaws.com",
-                                            "public_ip": "100.53.244.19"
+                                            "public_dns_name": "ec2-100-31-202-83.compute-1.amazonaws.com",
+                                            "public_ip": "100.31.202.83"
                                         },
                                         "primary": true,
-                                        "private_dns_name": "ip-172-31-4-130.ec2.internal",
-                                        "private_ip_address": "172.31.4.130"
+                                        "private_dns_name": "ip-172-31-11-39.ec2.internal",
+                                        "private_ip_address": "172.31.11.39"
                                     }
                                 ],
                                 "source_dest_check": true,
@@ -126,16 +126,16 @@
                             "tenancy": "default"
                         },
                         "platform_details": "Red Hat Enterprise Linux",
-                        "private_dns_name": "ip-172-31-4-130.ec2.internal",
+                        "private_dns_name": "ip-172-31-11-39.ec2.internal",
                         "private_dns_name_options": {
                             "enable_resource_name_dns_a_record": false,
                             "enable_resource_name_dns_aaaa_record": false,
                             "hostname_type": "ip-name"
                         },
-                        "private_ip_address": "172.31.4.130",
+                        "private_ip_address": "172.31.11.39",
                         "product_codes": [],
-                        "public_dns_name": "ec2-100-53-244-19.compute-1.amazonaws.com",
-                        "public_ip_address": "100.53.244.19",
+                        "public_dns_name": "ec2-100-31-202-83.compute-1.amazonaws.com",
+                        "public_ip_address": "100.31.202.83",
                         "root_device_name": "/dev/sda1",
                         "root_device_type": "ebs",
                         "security_groups": [
@@ -152,13 +152,13 @@
                         "state_transition_reason": "",
                         "subnet_id": "subnet-0458897611d5e6679",
                         "tags": {
-                            "Component": "mongdb",
+                            "Component": "mongodb",
                             "Environment": "dev",
-                            "Name": "mongdb-[]",
+                            "Name": "mongodb-dev",
                             "Project": "roboshop"
                         },
                         "usage_operation": "RunInstances:0010",
-                        "usage_operation_update_time": "2026-02-12T08:36:02+00:00",
+                        "usage_operation_update_time": "2026-02-12T10:51:20+00:00",
                         "virtualization_type": "hvm",
                         "vpc_id": "vpc-0eac8fd7c86123603"
                     }
@@ -190,7 +190,7 @@
                             ],
                             "subnet-id": "subnet-0458897611d5e6679",
                             "tag:Name": [
-                                "mongdb-[]"
+                                "mongodb-dev"
                             ]
                         },
                         "hibernation_options": false,
@@ -203,7 +203,7 @@
                         "key_name": null,
                         "launch_template": null,
                         "metadata_options": null,
-                        "name": "mongdb-[]",
+                        "name": "mongodb-dev",
                         "network": null,
                         "placement_group": null,
                         "profile": null,
@@ -215,9 +215,9 @@
                         "session_token": null,
                         "state": "present",
                         "tags": {
-                            "Component": "mongdb",
+                            "Component": "mongodb",
                             "Environment": "dev",
-                            "Name": "mongdb-[]",
+                            "Name": "mongodb-dev",
                             "Project": "roboshop"
                         },
                         "tenancy": null,
@@ -230,10 +230,10 @@
                         "wait_timeout": 600
                     }
                 },
-                "item": "mongdb",
+                "item": "mongodb",
                 "spec": {
                     "BlockDeviceMappings": [],
-                    "ClientToken": "265aaea3ca0a4b2280a8de8ccfc32204",
+                    "ClientToken": "fe263f218ed44e00ad8faca5cf8b47e4",
                     "ImageId": "ami-0220d79f3f480ecf5",
                     "InstanceType": "t3.micro",
                     "MaxCount": 1,
@@ -257,7 +257,7 @@
                                 },
                                 {
                                     "Key": "Component",
-                                    "Value": "mongdb"
+                                    "Value": "mongodb"
                                 },
                                 {
                                     "Key": "Environment",
@@ -265,7 +265,7 @@
                                 },
                                 {
                                     "Key": "Name",
-                                    "Value": "mongdb-[]"
+                                    "Value": "mongodb-dev"
                                 }
                             ]
                         },
@@ -278,7 +278,7 @@
                                 },
                                 {
                                     "Key": "Component",
-                                    "Value": "mongdb"
+                                    "Value": "mongodb"
                                 },
                                 {
                                     "Key": "Environment",
@@ -286,7 +286,7 @@
                                 },
                                 {
                                     "Key": "Name",
-                                    "Value": "mongdb-[]"
+                                    "Value": "mongodb-dev"
                                 }
                             ]
                         }
@@ -298,7 +298,7 @@
                 "changed": true,
                 "failed": false,
                 "instance_ids": [
-                    "i-0c692207a35f8a4d6"
+                    "i-0bdf0ef27cad8cd65"
                 ],
                 "instances": [
                     {
@@ -308,11 +308,11 @@
                             {
                                 "device_name": "/dev/sda1",
                                 "ebs": {
-                                    "attach_time": "2026-02-12T08:36:07+00:00",
+                                    "attach_time": "2026-02-12T10:51:25+00:00",
                                     "delete_on_termination": true,
                                     "ebs_card_index": 0,
                                     "status": "attaching",
-                                    "volume_id": "vol-0077c9b48cc58e2a1"
+                                    "volume_id": "vol-004d1d6d10ad58bce"
                                 }
                             }
                         ],
@@ -320,7 +320,7 @@
                         "capacity_reservation_specification": {
                             "capacity_reservation_preference": "open"
                         },
-                        "client_token": "b529b67fbab244bf85647823f04a319d",
+                        "client_token": "16e88c1d610543b693a73a239913f322",
                         "cpu_options": {
                             "core_count": 1,
                             "threads_per_core": 2
@@ -336,9 +336,9 @@
                         },
                         "hypervisor": "xen",
                         "image_id": "ami-0220d79f3f480ecf5",
-                        "instance_id": "i-0c692207a35f8a4d6",
+                        "instance_id": "i-0bdf0ef27cad8cd65",
                         "instance_type": "t3.micro",
-                        "launch_time": "2026-02-12T08:36:06+00:00",
+                        "launch_time": "2026-02-12T10:51:24+00:00",
                         "maintenance_options": {
                             "auto_recovery": "default",
                             "reboot_migration": "default"
@@ -358,12 +358,12 @@
                             {
                                 "association": {
                                     "ip_owner_id": "amazon",
-                                    "public_dns_name": "ec2-44-203-236-96.compute-1.amazonaws.com",
-                                    "public_ip": "44.203.236.96"
+                                    "public_dns_name": "ec2-44-223-85-221.compute-1.amazonaws.com",
+                                    "public_ip": "44.223.85.221"
                                 },
                                 "attachment": {
-                                    "attach_time": "2026-02-12T08:36:06+00:00",
-                                    "attachment_id": "eni-attach-000d3da2fbd276560",
+                                    "attach_time": "2026-02-12T10:51:24+00:00",
+                                    "attachment_id": "eni-attach-088da11e8d43060d9",
                                     "delete_on_termination": true,
                                     "device_index": 0,
                                     "network_card_index": 0,
@@ -378,24 +378,24 @@
                                 ],
                                 "interface_type": "interface",
                                 "ipv6_addresses": [],
-                                "mac_address": "02:16:dc:96:17:f5",
-                                "network_interface_id": "eni-052e8a848c8b5fdfb",
+                                "mac_address": "02:a4:7b:bb:4d:eb",
+                                "network_interface_id": "eni-053b8a1bd59f6523a",
                                 "operator": {
                                     "managed": false
                                 },
                                 "owner_id": "911701613683",
-                                "private_dns_name": "ip-172-31-9-204.ec2.internal",
-                                "private_ip_address": "172.31.9.204",
+                                "private_dns_name": "ip-172-31-1-178.ec2.internal",
+                                "private_ip_address": "172.31.1.178",
                                 "private_ip_addresses": [
                                     {
                                         "association": {
                                             "ip_owner_id": "amazon",
-                                            "public_dns_name": "ec2-44-203-236-96.compute-1.amazonaws.com",
-                                            "public_ip": "44.203.236.96"
+                                            "public_dns_name": "ec2-44-223-85-221.compute-1.amazonaws.com",
+                                            "public_ip": "44.223.85.221"
                                         },
                                         "primary": true,
-                                        "private_dns_name": "ip-172-31-9-204.ec2.internal",
-                                        "private_ip_address": "172.31.9.204"
+                                        "private_dns_name": "ip-172-31-1-178.ec2.internal",
+                                        "private_ip_address": "172.31.1.178"
                                     }
                                 ],
                                 "source_dest_check": true,
@@ -417,16 +417,16 @@
                             "tenancy": "default"
                         },
                         "platform_details": "Red Hat Enterprise Linux",
-                        "private_dns_name": "ip-172-31-9-204.ec2.internal",
+                        "private_dns_name": "ip-172-31-1-178.ec2.internal",
                         "private_dns_name_options": {
                             "enable_resource_name_dns_a_record": false,
                             "enable_resource_name_dns_aaaa_record": false,
                             "hostname_type": "ip-name"
                         },
-                        "private_ip_address": "172.31.9.204",
+                        "private_ip_address": "172.31.1.178",
                         "product_codes": [],
-                        "public_dns_name": "ec2-44-203-236-96.compute-1.amazonaws.com",
-                        "public_ip_address": "44.203.236.96",
+                        "public_dns_name": "ec2-44-223-85-221.compute-1.amazonaws.com",
+                        "public_ip_address": "44.223.85.221",
                         "root_device_name": "/dev/sda1",
                         "root_device_type": "ebs",
                         "security_groups": [
@@ -445,11 +445,11 @@
                         "tags": {
                             "Component": "catalogue",
                             "Environment": "dev",
-                            "Name": "catalogue-[]",
+                            "Name": "catalogue-dev",
                             "Project": "roboshop"
                         },
                         "usage_operation": "RunInstances:0010",
-                        "usage_operation_update_time": "2026-02-12T08:36:06+00:00",
+                        "usage_operation_update_time": "2026-02-12T10:51:24+00:00",
                         "virtualization_type": "hvm",
                         "vpc_id": "vpc-0eac8fd7c86123603"
                     }
@@ -481,7 +481,7 @@
                             ],
                             "subnet-id": "subnet-0458897611d5e6679",
                             "tag:Name": [
-                                "catalogue-[]"
+                                "catalogue-dev"
                             ]
                         },
                         "hibernation_options": false,
@@ -494,7 +494,7 @@
                         "key_name": null,
                         "launch_template": null,
                         "metadata_options": null,
-                        "name": "catalogue-[]",
+                        "name": "catalogue-dev",
                         "network": null,
                         "placement_group": null,
                         "profile": null,
@@ -508,7 +508,7 @@
                         "tags": {
                             "Component": "catalogue",
                             "Environment": "dev",
-                            "Name": "catalogue-[]",
+                            "Name": "catalogue-dev",
                             "Project": "roboshop"
                         },
                         "tenancy": null,
@@ -524,7 +524,7 @@
                 "item": "catalogue",
                 "spec": {
                     "BlockDeviceMappings": [],
-                    "ClientToken": "b529b67fbab244bf85647823f04a319d",
+                    "ClientToken": "16e88c1d610543b693a73a239913f322",
                     "ImageId": "ami-0220d79f3f480ecf5",
                     "InstanceType": "t3.micro",
                     "MaxCount": 1,
@@ -556,7 +556,7 @@
                                 },
                                 {
                                     "Key": "Name",
-                                    "Value": "catalogue-[]"
+                                    "Value": "catalogue-dev"
                                 }
                             ]
                         },
@@ -577,7 +577,7 @@
                                 },
                                 {
                                     "Key": "Name",
-                                    "Value": "catalogue-[]"
+                                    "Value": "catalogue-dev"
                                 }
                             ]
                         }
