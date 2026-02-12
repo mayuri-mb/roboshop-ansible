@@ -4,6 +4,7 @@
   vars:
     sg_id: sg-0cfcd5040a31b76f2
     ami_id: ami-0220d79f3f480ecf5
+    domain_name: daws-88s.online  
     env: dev
     instances:
     - mongdb
@@ -26,4 +27,15 @@
   - name:  print output
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
+
+  - name: create route53 records
+    amazon.aws.route53:
+     state:  present
+     zone: "{{ domain_name }}"  
+     record:  "{{ item.item }}-{{ env }}.{{ domain_name }}" #mongodb-env.daws-88s.online
+     type: A
+     ttl: 1
+     value: "{{ item.instances[0].private_ip_address }}" #1st entry->instances 0th position-> private address
+     wait: true 
+  loop: "{{ ec2_output.results }}"    #this is results list in ec2_output.json
 
