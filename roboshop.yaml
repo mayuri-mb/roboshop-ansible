@@ -32,10 +32,23 @@
     amazon.aws.route53:
      state:  present
      zone: "{{ domain_name }}"  
-     record:  "{{ item.item }}-{{ env }}.{{ domain_name }}" #mongodb-env.daws-88s.online
+     record:  "{{ item.item }}-{{ env }}.{{ domain_name }}" #mongodb-env.daws-88s.online, frontend-env.daws-88s.online
      type: A
      ttl: 1
      value: "{{ item.instances[0].private_ip_address }}" #1st entry->instances 0th position-> private address
      wait: true 
     loop: "{{ ec2_output.results }}"    #this is results list in ec2_output.json
+
+  - name: create route53 records
+    amazon.aws.route53:
+     state:  present
+     zone: "{{ domain_name }}"  
+     record:  "roboshop-{{ env }}.{{ domain_name }}" #roboshop-env.daws-88s.online
+     type: A
+     ttl: 1
+     value: "{{ item.instances[0].public_ip_address }}" 
+     wait: true 
+    loop: "{{ ec2_output.results }}" 
+    when: item.item == "frontend"   
+
 
