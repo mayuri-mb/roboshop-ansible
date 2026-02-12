@@ -41,6 +41,7 @@
      value: "{{ item.instances[0].private_ip_address }}" #1st entry->instances 0th position-> private address
      wait: true 
     loop: "{{ ec2_output.results }}"    #this is results list in ec2_output.json
+    when: action == "create"
 
   - name: create route53 records
     amazon.aws.route53:
