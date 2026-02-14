@@ -46,7 +46,7 @@
 
   - name: install dependencies
     ansible.general.npm:
-    path: .app
+    path: /app
 
   - name: copy catalogue service
     ansible.builtin.copy:
