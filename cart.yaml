@@ -45,8 +45,8 @@
       remote_src: yes
 
   - name: install dependencies
-    ansible.general.npm:
-    path: .app
+    community.general.npm:
+      path: /app
 
   - name: copy cart service
     ansible.builtin.template:
