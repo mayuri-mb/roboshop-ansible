@@ -11,7 +11,7 @@
       state: present
 
   -  name: allow remote connections
-     ansible.builtin.replace:
+     ansible.builtin.replace:             #word replacement
       path: /etc/redis/redis.conf
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
@@ -27,5 +27,5 @@
       name: redis
       state: restarted
       enabled:  yes
-          
+
 
