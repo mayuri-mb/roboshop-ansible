@@ -1,5 +1,5 @@
-#ansible-playbook -i localhost, \ -e {"instances":'["mongodb", "catalogue", "redis", "user", "cart", "mysql", "shipping",
-#"rabitmq", "payment", "frontend"]}' \ roboshop.yaml
+#ansible-playbook -i localhost,   -e '{"instances":["mongodb","catalogue","redis","user","cart","mysql","shipping","rabbitmq","payment","frontend"]}' roboshop.yaml
+
 - name: Create ec2 and r53 records
   hosts:  all
   connection: local   
@@ -20,7 +20,7 @@
       security_group: "{{ sg_id }}"  
       image_id: "{{ ami_id }}"        
       name: "{{ item }}-{{ env }}"
-      wait: false              # bydefault it's true
+      wait: true              # bydefault it's true
       tags:
         Project:  roboshop
         Component:  "{{ item }}"
