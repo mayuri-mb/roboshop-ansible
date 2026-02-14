@@ -1,3 +1,5 @@
+#ansible-playbook -i localhost, \ -e {"instances":'["mongodb", "catalogue", "redis", "user", "cart", "mysql", "shipping",
+#"rabitmq", "payment", "frontend"]}' \ roboshop.yaml
 - name: Create ec2 and r53 records
   hosts:  all
   connection: local   
@@ -11,12 +13,14 @@
     - mongodb
     - catalogue
   tasks:
+  ## CREATE ##
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       instance_type:  "t3.micro"
       security_group: "{{ sg_id }}"  
       image_id: "{{ ami_id }}"        
       name: "{{ item }}-{{ env }}"
+      wait: false              # bydefault it's true
       tags:
         Project:  roboshop
         Component:  "{{ item }}"
@@ -39,7 +43,8 @@
      type: A
      ttl: 1
      value: "{{ item.instances[0].private_ip_address }}" #1st entry->instances 0th position-> private address
-     wait: true 
+     wait: false
+     overwrite: true
     loop: "{{ ec2_output.results }}"    #this is results list in ec2_output.json
     when: action == "create"
 
@@ -51,12 +56,14 @@
      type: A
      ttl: 1
      value: "{{ item.instances[0].public_ip_address }}" 
-     wait: true 
+     wait: false
+     overwrite: true
     loop: "{{ ec2_output.results }}" 
-    when:  #like and condition
+    when:  #it's like 'and' condition
     - item.item == "frontend"   
     - action == "create"
 
+## DESTROY ##
   - name: delete r53 records
     amazon.aws.route53:
       state: absent
@@ -71,6 +78,7 @@
     amazon.aws.ec2_instance:
       state: absent
       name: "{{ item }}-{{ env }}"
+      wait: false
     loop: "{{ instances }}"  
     when: action == "destroy"  
 
