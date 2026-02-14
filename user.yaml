@@ -51,7 +51,7 @@
   - name: copy user service
     ansible.builtin.template:
       src: user.service 
-      dest: /etc/systemd/system/user
+      dest: /etc/systemd/system/user.service
 
   - name: start user
     ansible.builtin.service:
