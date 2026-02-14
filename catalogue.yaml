@@ -51,7 +51,7 @@
   - name: copy catalogue service
     ansible.builtin.copy:
       src: catalogue.service 
-      dest: /etc/systemd/system/catalogue
+      dest: /etc/systemd/system/catalogue.service
 
   - name: copy mongo repo
     ansible.builtin.copy:
