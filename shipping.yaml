@@ -18,6 +18,11 @@
       shell: /sbin/nologin
       comment: "Roboshop system user"
 
+  - name: delete app directory
+    ansible.builtin.file:
+      path: /app
+      state: absent    
+
   - name: create app directory
     ansible.builtin.file:
       path: /app
@@ -57,6 +62,26 @@
   - name: daemon reload
     ansible.builtin.systemd_service:
       daemon_reload: true
+
+  - name: import shipping data
+    community.mysql.mysql_db:
+      state: import
+      name: all
+      login_host: "{{ MYSQL_HOST }}"
+      login_user: root
+      login_password: Roboshop@1
+      target: "{{ item }}"
+    loop: 
+    - /app/db/schema.sql
+    - /app/db/app-user.sql
+    - /app/db/master-data.sql
+
+  - name: start and enable shipping
+    ansible.builtin.service:
+      name: shipping
+      state: restarted
+      enabled: yes  
+    
 
 
 
