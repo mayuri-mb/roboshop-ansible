@@ -39,7 +39,7 @@
 
   - name: remove default nginx    
     ansible.builtin.file:
-      path: /usr/share/nginx/html
+      path: /etc/nginx/nginx.conf
       state: absent
 
   - name: copy nginx.conf 
